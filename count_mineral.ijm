@@ -3,18 +3,6 @@
 var mineral;
 var colors;
 
-selectWindow("test");
-run("Grid...", "grid=Circles area=0.4 color=Red bold");
-run("To ROI Manager");
-roiManager("Select", 0);
-roiManager("Split");
-roiManager("Delete");
-//roiManager("Show All");
-roiManager("Remove Slice Info");
-roiManager("Remove Frame Info");
-//run("Labels...", "color=red font=24 show bold");
-
-
 function rename_point(){
 	//while(selectionType()!=1){};
 	
@@ -33,10 +21,9 @@ function type_mineral(){
 function count_mineral(){
 	type_mineral();
 	while (!isKeyDown("shift")) {
-
-				if(roiManager("index")!=-1) {
-							rename_point();
-							wait(100);
+			if(roiManager("index")!=-1) {
+					rename_point();
+					wait(100);
 			}
 	}
 }
@@ -47,6 +34,20 @@ function L(x0,y0,xa,ya){
 	l=sqrt((x0-xa)*(x0-xa)+(y0-ya)*(y0-ya));
 	return l
 }
+
+
+////////////////////////////////////
+
+selectWindow("test");
+run("Grid...", "grid=Circles area=0.4 color=Red bold");
+run("To ROI Manager");
+roiManager("Select", 0);
+roiManager("Split");
+roiManager("Delete");
+//roiManager("Show All");
+roiManager("Remove Slice Info");
+roiManager("Remove Frame Info");
+//run("Labels...", "color=red font=24 show bold");
 
 
 x0=getHeight()/2;
@@ -101,7 +102,4 @@ while (answer==1) {
 			count_mineral();	
 			answer=getBoolean("Продолжить?");
 }
-
-
-
 
