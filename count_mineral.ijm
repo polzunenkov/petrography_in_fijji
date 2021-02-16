@@ -17,6 +17,7 @@ roiManager("Remove Frame Info");
 
 function rename_point(){
 	//while(selectionType()!=1){};
+	
 	roiManager("Rename", mineral);
 	roiManager("Set Color", colors);
 	//roiManager("deselect");
@@ -32,13 +33,12 @@ function type_mineral(){
 function count_mineral(){
 	type_mineral();
 	while (!isKeyDown("shift")) {
-		roiManager("Select", 182);
-		
-		if(roiManager("index")!=-1){	
-					
-			rename_point();
-			} 
-		}
+
+				if(roiManager("index")!=-1) {
+							rename_point();
+							wait(100);
+			}
+	}
 }
 
 ///////////////////del point by circle out//////////////////////////////
@@ -101,4 +101,7 @@ while (answer==1) {
 			count_mineral();	
 			answer=getBoolean("Продолжить?");
 }
+
+
+
 
