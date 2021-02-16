@@ -59,7 +59,7 @@ function mask(){
 //mask();
 
 function mont(){
-	wait(2000);
+	//wait(2000);
 	dpole=getNumber("diametr pole:", 1);
 	
 	clip();

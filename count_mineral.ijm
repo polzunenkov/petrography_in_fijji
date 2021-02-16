@@ -2,6 +2,7 @@
 
 var mineral;
 var colors;
+var area_grain;
 
 function rename_point(){
 	//while(selectionType()!=1){};
@@ -39,7 +40,14 @@ function L(x0,y0,xa,ya){
 ////////////////////////////////////
 
 selectWindow("test");
-run("Grid...", "grid=Circles area=0.4 color=Red bold");
+//showMessage("Обведите зерно среднего размера");
+//setTool("freehand");
+//wait(4000);
+//getDisplayedArea(x, y, width, height);
+//s=width*height;
+//area_grain=(s/1000000)*0.25;
+run("Colors...", "foreground=black background=green selection=yellow");
+run("Grid...", "grid=Circles area=0.8 color=Red bold");
 run("To ROI Manager");
 roiManager("Select", 0);
 roiManager("Split");

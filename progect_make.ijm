@@ -7,8 +7,9 @@ thin_section_name=getString("Name thin section", "1");
 home_directory=getDirectory("Choose a Directory");
 make_directory=home_directory+thin_section_name;
 File.makeDirectory(make_directory);
-selectWindow("Montage");
+selectWindow("Montage.tif");
 save(make_directory+"/"+thin_section_name+".png");
+save(make_directory+"/"+thin_section_name+".tif");
 selectWindow("Stack");
 save(make_directory+"/"+thin_section_name+".gif");
 

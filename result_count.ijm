@@ -38,7 +38,7 @@ function Arrayfilter(array,minabr) {
 
 function vector_lable(){
 	cont=roiManager("count");
-	result_vector="min";
+	result_vector=newArray();
 
 	for (i = 0; i < cont; i++) {
 		roiManager("Select", i);
@@ -50,22 +50,22 @@ return result_vector;
 
 
 r=vector_lable();
-Array.print(r);
+//Array.print(r);
 unique = ArrayUnique(r);
 Array.print(unique);
 
 i=0;
 Mi="Modal:";
 while (i<(unique.length)) {
-   				
+			
 mins = Arrayfilter(r,unique[i]);
-pr=floor(mins.length/r.length*100);
+pr=round(mins.length/r.length*100);
 //print(unique[i]+'-'+pr+"%");
 Mi=Mi+'\n '+unique[i]+'-'+pr+"%";
    		i++;
    	}
-   	print(Mi);
-   	
+   	//print(Mi);
+   	run("Colors...", "foreground=black background=green selection=black");
    	selectWindow("Montage");
 	W=getWidth()/2.11;
 	h=getHeight()/1.3;
